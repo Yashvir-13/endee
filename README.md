@@ -1,6 +1,6 @@
 # Endee: High-Performance Open Source Vector Database
 
-**Endee (ndd)** is a specialized, high-performance vector database built for speed and efficiency. This guide covers supported platforms, dependency requirements, and detailed build instructions using both our automated installer and manual CMake configuration.
+**Endee (nD)** is a specialized, high-performance vector database built for speed and efficiency. This guide covers supported platforms, dependency requirements, and detailed build instructions using both our automated installer and manual CMake configuration.
 
 ---
 
@@ -10,7 +10,7 @@ Before installing, ensure your system meets the following hardware and operating
 
 ### Supported Operating Systems
 
-* **Linux**: Debian 12 (Bookworm) or Debian 13 (Trixie).
+* **Linux**: Ubuntu(22.04, 24.04, 25.04) Debian(12, 13), Rocky(8, 9, 10), Centos(8, 9, 10), Fedora(40, 42, 43)
 * **macOS**: Apple Silicon (M Series) only.
 
 ### Required Dependencies
