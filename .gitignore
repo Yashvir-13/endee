@@ -1,0 +1,11 @@
+# Environment
+.env
+venv/
+__pycache__/
+*.pyc
+
+# Generated data (recreated by `python run.py ingest`)
+data/
+
+# Endee server (evaluators build/install separately)
+endee_fork/

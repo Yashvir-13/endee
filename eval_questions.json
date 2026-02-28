@@ -1,0 +1,42 @@
+[
+  {
+    "question": "Why does Schopenhauer believe suffering is fundamental to life?",
+    "expected_concepts": ["will", "desire", "pain", "satisfaction", "striving"]
+  },
+  {
+    "question": "What is the role of art in Schopenhauer's philosophy?",
+    "expected_concepts": ["contemplation", "will", "Ideas", "aesthetic", "liberation"]
+  },
+  {
+    "question": "How does Schopenhauer distinguish between the world as will and the world as representation?",
+    "expected_concepts": ["thing-in-itself", "phenomenon", "perception", "subject", "object"]
+  },
+  {
+    "question": "What does Schopenhauer say about the denial of the will to live?",
+    "expected_concepts": ["asceticism", "renunciation", "suffering", "salvation", "resignation"]
+  },
+  {
+    "question": "How does Schopenhauer view the relationship between music and the will?",
+    "expected_concepts": ["music", "will", "copy", "universal", "feeling", "art"]
+  },
+  {
+    "question": "What is Schopenhauer's principle of sufficient reason?",
+    "expected_concepts": ["causality", "ground", "knowing", "necessity", "reason"]
+  },
+  {
+    "question": "How does Schopenhauer explain the concept of compassion or sympathy?",
+    "expected_concepts": ["compassion", "suffering", "ethics", "identity", "egoism"]
+  },
+  {
+    "question": "What is Schopenhauer's view on free will?",
+    "expected_concepts": ["determinism", "character", "motive", "necessity", "will"]
+  },
+  {
+    "question": "How does Schopenhauer describe the Platonic Ideas?",
+    "expected_concepts": ["Ideas", "objectification", "will", "grades", "eternal"]
+  },
+  {
+    "question": "What does Schopenhauer say about the nature of time and space?",
+    "expected_concepts": ["forms", "intuition", "principium individuationis", "perception", "representation"]
+  }
+]
