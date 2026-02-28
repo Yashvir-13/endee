@@ -27,40 +27,7 @@ Built with **10 advanced RAG techniques** and powered by **Endee** — a high-pe
 
 ## 🏗️ Architecture
 
-```
-                        ┌──────────────────────────────┐
-                        │    Documents/ (3 volumes)     │
-                        └──────────────┬───────────────┘
-                                       │
-                              ┌────────▼────────┐
-                              │  Hierarchical    │
-                              │  Chunking        │
-                              │  Parent → Child  │
-                              └────────┬─────────┘
-                                       │
-                    ┌──────────────────┼──────────────────┐
-                    │                  │                   │
-           ┌───────▼───────┐  ┌───────▼───────┐  ┌───────▼──────┐
-           │  Dense Embed   │  │ TF-IDF Sparse │  │  Metadata    │
-           │ (e5-large-v2)  │  │   Encoding    │  │  Filters     │
-           │   1024-dim     │  │   ~24K-dim    │  │  (volume)    │
-           └───────┬────────┘  └───────┬───────┘  └───────┬──────┘
-                   └───────────┬───────┘──────────────────┘
-                               │
-                      ┌────────▼────────┐
-                      │   Endee DB       │
-                      │  Hybrid HNSW     │
-                      │  (cosine sim)    │
-                      └────────┬─────────┘
-                               │
-     User Question ──► [HyDE] ──► [Expand] ──► Hybrid Search ──► [Re-rank]
-                                                                     │
-                                                              ┌──────▼──────┐
-                                                              │  LLM (Llama3│
-                                                              │  via Ollama)│
-                                                              │  + Sources  │
-                                                              └─────────────┘
-```
+![Architecture Diagram](architecture.png)
 
 ### Why Endee?
 
@@ -270,6 +237,7 @@ The agent loops up to 3 times, accumulating unique passages across iterations.
 ```
 .
 ├── Documents/                # Schopenhauer text files (3 volumes)
+├── endee_fork/               # Endee vector database (git submodule)
 ├── src/
 │   ├── __init__.py
 │   ├── ingest.py             # Ingestion: hierarchical chunk → embed → sparse → store
@@ -289,6 +257,7 @@ The agent loops up to 3 times, accumulating unique passages across iterations.
 │   └── 05_evaluation.txt
 ├── data/
 │   └── tfidf_vectorizer.pkl  # Saved TF-IDF vectorizer (generated during ingest)
+├── architecture.png          # System architecture diagram
 ├── eval_questions.json       # 10 curated evaluation questions
 ├── run.py                    # CLI entry point
 ├── requirements.txt          # Python dependencies
