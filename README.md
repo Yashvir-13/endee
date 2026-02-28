@@ -206,10 +206,24 @@ python run.py evaluate
 ```
   EVALUATION REPORT
   Questions:              10
-  Passing (≥60% hits):    8/10
-  Overall concept hit:    42/50 (84%)
-  Avg retrieval time:     0.15s
+  Passing (≥60% hits):    5/10
+  Overall concept hit:    28/51 (55%)
+  Avg retrieval time:     0.31s
 ```
+
+---
+
+## 📋 Example Outputs
+
+Pre-recorded outputs are available in the [`examples/`](examples/) folder so evaluators can review system behavior without running the full pipeline:
+
+| File | Mode | Command |
+|------|------|---------|
+| [`01_basic_query.txt`](examples/01_basic_query.txt) | Basic hybrid search + streaming | `python run.py query "Why is suffering fundamental?" --stream` |
+| [`02_all_features_query.txt`](examples/02_all_features_query.txt) | HyDE + Query Expansion + Re-ranking + Streaming | `python run.py query "Role of art?" --all` |
+| [`03_agent_mode.txt`](examples/03_agent_mode.txt) | Agentic multi-step retrieval | `python run.py agent "Will, suffering, and art?"` |
+| [`04_metadata_filter.txt`](examples/04_metadata_filter.txt) | Volume 1 filter + Re-ranking | `python run.py query "Music?" --filter vol1 --rerank` |
+| [`05_evaluation.txt`](examples/05_evaluation.txt) | Evaluation pipeline (10 questions) | `python run.py evaluate` |
 
 ---
 
@@ -267,6 +281,12 @@ The agent loops up to 3 times, accumulating unique passages across iterations.
 │   ├── sparse.py             # TF-IDF sparse encoder for hybrid search
 │   ├── reranker.py           # LLM-based re-ranking via Ollama
 │   └── utils.py              # Document loading + hierarchical chunking
+├── examples/                 # Pre-recorded output examples
+│   ├── 01_basic_query.txt
+│   ├── 02_all_features_query.txt
+│   ├── 03_agent_mode.txt
+│   ├── 04_metadata_filter.txt
+│   └── 05_evaluation.txt
 ├── data/
 │   └── tfidf_vectorizer.pkl  # Saved TF-IDF vectorizer (generated during ingest)
 ├── eval_questions.json       # 10 curated evaluation questions
